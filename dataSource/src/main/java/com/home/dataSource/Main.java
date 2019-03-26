@@ -30,12 +30,12 @@ public class Main {
 			e.printStackTrace();
 		}
 		
-		List<userDao> firstIndex = getDataFromDB();
+		/*List<userDao> firstIndex = getDataFromDB();
 		if (firstIndex!=null){
 			for (userDao item : firstIndex) {
 				System.out.println(item.toString());
 			}
-		}
+		}*/
 
 	}
 	
@@ -55,7 +55,7 @@ public class Main {
 			// DriverManager: The basic service for managing a set of JDBC drivers.
 			// Creamos la conexión (root1 = usuario, root2 = password):
 			// BBDD at home: conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testingmaven", "root", "root");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:8889/database2", "root", "root");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:8889/secondserver", "root", "root");
 			if (conn != null) {
 				log("Connection Successfully created!");
 			} else {
@@ -71,7 +71,7 @@ public class Main {
 	
 	private static void addDataToDB(userDao userdao) throws SQLException {
 
-		String insertQueryStatement = "INSERT INTO `chemausers`(`firstname`, `lastname`, `phonenumber`) VALUES (?,?,?)";
+		String insertQueryStatement = "INSERT INTO `serverusers`(`firstname`, `lastname`, `phonenumber`) VALUES (?,?,?)";
 
 		stm = conn.prepareStatement(insertQueryStatement);
 		stm.setString(1, userdao.getFirstname());
@@ -82,7 +82,7 @@ public class Main {
 
 	}
 
-	private static List<userDao> getDataFromDB() {
+	/*private static List<userDao> getDataFromDB() {
 		List<userDao> upcomingUsers = new ArrayList<userDao>();
 		try {
 			// MySQL Select Query Tutorial
@@ -113,7 +113,7 @@ public class Main {
 
 		return upcomingUsers;
 
-	}
+	}*/
 	
 	private static void log(String string) {
 		System.out.println(string);
