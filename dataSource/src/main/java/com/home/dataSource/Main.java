@@ -55,7 +55,7 @@ public class Main {
 			// DriverManager: The basic service for managing a set of JDBC drivers.
 			// Creamos la conexión (root1 = usuario, root2 = password):
 			// BBDD at home: conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/testingmaven", "root", "root");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:8889/testmavencice", "root", "root");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:8889/database2", "root", "root");
 			if (conn != null) {
 				log("Connection Successfully created!");
 			} else {
